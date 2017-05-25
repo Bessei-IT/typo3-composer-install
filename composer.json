@@ -13,6 +13,11 @@
       "email": "composer@bessei-it.eu"
     }
   ],
+  "autoload": {
+    "psr-4": {
+      "Helhum\\TYPO3\\Distribution\\": "src"
+    }
+  },
   "extra": {
     "helhum/typo3-console": {
       "install-extension-dummy": false

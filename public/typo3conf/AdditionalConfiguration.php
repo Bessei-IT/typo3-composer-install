@@ -7,27 +7,29 @@
 (function () {
     // We try to follow PHP PDS (http://php-pds.com/) so ROOT_DIR/config/ should contain all configurations.
     $appContext = \TYPO3\CMS\Core\Utility\GeneralUtility::getApplicationContext();
-    $configDir = __DIR__;
+    $configDir = rtrim(dirname(PATH_site), '/') . '/config';
     $configFileBaseName = $configDir . '/Config';
+
+    $config = [];
 
     // Load config files of current TYPO3 context.
 
     // 1. Load default config ConfigDefault.php
     $defaultConfigFile = $configFileBaseName . 'Default.php';
     if (is_readable($defaultConfigFile)) {
-        require_once $defaultConfigFile;
+        $config = array_replace_recursive($config, include $defaultConfigFile);
     }
 
     // 2. Load root context config: ConfigDevelopment.php or ConfigProduction.php
     if ($appContext->isProduction()) {
         $productionConfigFile = $configFileBaseName . 'Production.php';
         if (is_readable($productionConfigFile)) {
-            require_once $productionConfigFile;
+            $config = array_replace_recursive($config, include $productionConfigFile);
         }
     } elseif ($appContext->isDevelopment()) {
         $developmentConfigFile = $configFileBaseName . 'Development.php';
         if (is_readable($developmentConfigFile)) {
-            require_once $developmentConfigFile;
+            $config = array_replace_recursive($config, include $developmentConfigFile);
         }
     }
 
@@ -35,13 +37,20 @@
     if (!is_null($appContext->getParent())) {
         $specificContextConfigFile = $configFileBaseName . str_replace('/', '', (string)$appContext) . '.php';
         if (is_readable($specificContextConfigFile)) {
-            require_once $specificContextConfigFile;
+            $config = array_replace_recursive($config, include $specificContextConfigFile);
         }
     }
 
     // 4. Load override config: ConfigOverride.php
     $overrideConfigFile = $configFileBaseName . 'Override.php';
     if (is_readable($overrideConfigFile)) {
-        require_once $overrideConfigFile;
+        $config = array_replace_recursive($config, include $overrideConfigFile);
+    }
+
+    if (!empty($config)) {
+        $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive(
+            $GLOBALS['TYPO3_CONF_VARS'],
+            $config
+        );
     }
 })();

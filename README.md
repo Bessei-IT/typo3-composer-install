@@ -21,3 +21,4 @@ vendor/bin/typo3cms extension:activate EXT_KEY
 # Links
 * [TYPO3 composer install](https://typo3.com/blog/how-to-install-typo3-using-composer-in-less-than-5-minutes/)
 * [TYPO3 console extension](https://github.com/TYPO3-Console/typo3_console)
+* [TYPO3 distribution](https://github.com/helhum/TYPO3-Distribution)
