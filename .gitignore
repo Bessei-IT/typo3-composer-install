@@ -1,7 +1,8 @@
 .idea/
 /typo3_src/
 /vendor/
-# Ignore typo3 folder and symlink
+
+# Ignore public files, except AdditionalConfiguration.php
 /public/**
 !/public/typo3conf/
 /public/typo3conf/*
