@@ -4,7 +4,10 @@
   "type": "project",
   "require": {
     "typo3/cms": "^8.7",
-    "helhum/typo3-console": "^4.6"
+    "helhum/typo3-console": "^4.6",
+    "symfony/console": "^2.7 || ^3.0",
+    "ircmaxell/random-lib": "^1.2",
+    "symfony/process": "^3.2"
   },
   "license": "MIT",
   "authors": [
@@ -15,7 +18,8 @@
   ],
   "autoload": {
     "psr-4": {
-      "Helhum\\TYPO3\\Distribution\\": "src"
+      "Helhum\\TYPO3\\Distribution\\": "src/Helhum",
+      "BIT\\TYPO3\\Install\\": "src/BIT"
     }
   },
   "extra": {
