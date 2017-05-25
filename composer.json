@@ -1,0 +1,24 @@
+{
+  "name": "bit/typo3-composer",
+  "description": "TYPO3 composer installation",
+  "type": "project",
+  "require": {
+    "typo3/cms": "^8.7",
+    "helhum/typo3-console": "^4.6"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Christoph Bessei",
+      "email": "composer@bessei-it.eu"
+    }
+  ],
+  "extra": {
+    "helhum/typo3-console": {
+      "install-extension-dummy": false
+    },
+    "typo3/cms": {
+      "web-dir": "public"
+    }
+  }
+}
