@@ -2,8 +2,7 @@
 /typo3_src/
 /vendor/
 # Ignore typo3 folder and symlink
-/public/typo3
-/public/typo3/
-/public/index.php
+/public/
+!/public/typo3conf/
 /public/typo3conf/*
 !/public/typo3conf/AdditionalConfiguration.php
