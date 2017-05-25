@@ -1,5 +1,5 @@
 {
-  "name": "bit/typo3-composer",
+  "name": "bit/typo3-composer-install",
   "description": "TYPO3 composer installation",
   "type": "project",
   "require": {
