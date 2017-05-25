@@ -10,12 +10,10 @@
     $configDir = __DIR__;
     $configFileBaseName = $configDir . '/Config';
 
-    $defaultConfigFile = $configFileBaseName . 'Default.php';
-    $overrideConfigFile = $configFileBaseName . 'Override.php';
-
     // Load config files of current TYPO3 context.
 
     // 1. Load default config ConfigDefault.php
+    $defaultConfigFile = $configFileBaseName . 'Default.php';
     if (is_readable($defaultConfigFile)) {
         require_once $defaultConfigFile;
     }
@@ -42,6 +40,7 @@
     }
 
     // 4. Load override config: ConfigOverride.php
+    $overrideConfigFile = $configFileBaseName . 'Override.php';
     if (is_readable($overrideConfigFile)) {
         require_once $overrideConfigFile;
     }
