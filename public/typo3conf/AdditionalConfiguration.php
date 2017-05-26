@@ -53,4 +53,20 @@
             $config
         );
     }
+
+    // Disable APCU/APC on CLI, it's useless on CLI and causes an exception if apc.enable_cli isn't true.
+    if (PHP_SAPI === 'cli') {
+        $cacheConfigs = &$GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations'];
+        if (is_array($cacheConfigs)) {
+            $disabledBackends = [
+                trim(\TYPO3\CMS\Core\Cache\Backend\ApcuBackend::class, '\\'),
+                trim(\TYPO3\CMS\Core\Cache\Backend\ApcBackend::class, '\\'),
+            ];
+            foreach ($cacheConfigs as $key => $cacheConfig) {
+                if (in_array(trim($cacheConfig['backend'], '\\'), $disabledBackends)) {
+                    $cacheConfigs[$key]['backend'] = \TYPO3\CMS\Core\Cache\Backend\NullBackend::class;
+                }
+            }
+        }
+    }
 })();
