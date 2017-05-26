@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "bb3668ea45eb19c3eeb3eb764d4890de",
+    "content-hash": "2ded0c4417c40cfa83eab212afd1d23e",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -761,16 +761,16 @@
         },
         {
             "name": "helhum/typo3-console",
-            "version": "4.6.0",
+            "version": "4.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3-Console/typo3_console.git",
-                "reference": "8a38fdb765bcf4cac227a243101c0bf5e574a6cf"
+                "reference": "1fd31f997f4bdc8f82a633bf75a8ea7713b41987"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-Console/typo3_console/zipball/8a38fdb765bcf4cac227a243101c0bf5e574a6cf",
-                "reference": "8a38fdb765bcf4cac227a243101c0bf5e574a6cf",
+                "url": "https://api.github.com/repos/TYPO3-Console/typo3_console/zipball/1fd31f997f4bdc8f82a633bf75a8ea7713b41987",
+                "reference": "1fd31f997f4bdc8f82a633bf75a8ea7713b41987",
                 "shasum": ""
             },
             "require": {
@@ -844,7 +844,7 @@
                 "console",
                 "typo3"
             ],
-            "time": "2017-05-24T14:50:55+00:00"
+            "time": "2017-05-26T13:40:33+00:00"
         },
         {
             "name": "helhum/typo3-console-plugin",
