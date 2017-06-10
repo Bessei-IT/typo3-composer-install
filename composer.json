@@ -16,6 +16,9 @@
     "symfony/process": "^3.2",
     "typo3/surf": "^2.0.0@beta"
   },
+  "require-dev": {
+    "typo3/testing-framework": "~1.0.7"
+  },
   "license": "MIT",
   "authors": [
     {
