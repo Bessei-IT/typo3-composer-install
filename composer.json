@@ -32,12 +32,35 @@
       "BIT\\TYPO3\\Install\\": "src/BIT"
     }
   },
+  "scripts": {
+    "post-install-cmd": [
+      "BIT\\TYPO3\\Install\\Composer\\Scripts\\Recursive::install",
+      "@buildAssets"
+    ],
+    "post-update-cmd": [
+      "BIT\\TYPO3\\Install\\Composer\\Scripts\\Recursive::update",
+      "@buildAssets"
+    ],
+    "buildAssets": [
+      "BIT\\TYPO3\\Install\\Composer\\Scripts\\Assets::build"
+    ]
+  },
   "extra": {
     "helhum/typo3-console": {
       "install-extension-dummy": false
     },
     "typo3/cms": {
       "web-dir": "public"
+    },
+    "bit/assets": {
+      "folders": [
+
+      ]
+    },
+    "bit/composer-recursive": {
+      "root-folder": [
+
+      ]
     }
   }
 }
