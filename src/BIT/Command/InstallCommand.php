@@ -5,9 +5,11 @@ namespace BIT\TYPO3\Install\Command;
 use RandomLib\Factory;
 use SecurityLib\Strength;
 use Symfony\Component\Console\Formatter\OutputFormatter;
+use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Question\ConfirmationQuestion;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\ProcessUtils;
 
@@ -52,14 +54,24 @@ class InstallCommand extends \Symfony\Component\Console\Command\Command
         $command .= ' ' . $this->buildCommandOptions($options);
 
         $process = new Process($command);
-        $exitCode = $process->run(function ($type, $buffer) use ($output) {
-            $output->write($buffer);
-        });
+        $exitCode = $process->run(
+            function ($type, $buffer) use ($output) {
+                $output->write($buffer);
+            }
+        );
 
         if (0 === $exitCode) {
+            $helper = $this->getHelper('question');
+            $activateSystemExtensionsQuestion = new ConfirmationQuestion('Activate system extensions?', false);
+            if ($helper->ask($input, $output, $activateSystemExtensionsQuestion)) {
+                $command = $this->getApplication()->find('typo3:activate');
+                $command->run(new ArrayInput([]), $output);
+            }
+
             $output->writeln('');
             $output->writeln('<info>Admin password set to ' . $password . '</info>');
         }
+
         return $exitCode;
     }
 
