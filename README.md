@@ -1,9 +1,16 @@
 # Install TYPO3 with composer
 
 ## Create project
+### Stable
 ```bash
 composer create-project bit/typo3-composer-install
 ```
+
+### Current master
+```bash
+composer create-project bit/typo3-composer-install:dev-master
+```
+
 ## Install TYPO3
 
 ### Using [TYPO3 console](https://github.com/TYPO3-Console/typo3_console)
