@@ -7,6 +7,7 @@ namespace BIT\TYPO3\Install\Composer\Scripts;
 
 use BIT\TYPO3\Install\Composer\Utility;
 use Composer\Script\Event;
+use Composer\Util\Filesystem;
 use TYPO3\Flow\Utility\Files;
 
 /**
@@ -24,6 +25,7 @@ class CreateProject
         static::$composerRoot = Utility::getAbsoluteRootPath();
         static::$templates = Files::concatenatePaths([static::$composerRoot, 'resources/createProjectTemplates']);
         static::initGitignore();
+        static::removeCreateProjectTemplates();
     }
 
     /**
@@ -42,6 +44,17 @@ class CreateProject
             if (is_readable($fullTemplatePath)) {
                 rename($fullTemplatePath, Files::concatenatePaths([static::$composerRoot, $targetPath]));
             }
+        }
+    }
+
+    /**
+     *
+     */
+    protected static function removeCreateProjectTemplates()
+    {
+        if (is_readable(static::$templates)) {
+            $fs = new Filesystem();
+            $fs->remove(static::$templates);
         }
     }
 }
