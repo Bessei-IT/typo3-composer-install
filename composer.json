@@ -33,6 +33,9 @@
     }
   },
   "scripts": {
+    "post-create-project-cmd": [
+      "BIT\\TYPO3\\Install\\Composer\\Scripts\\CreateProject::init"
+    ],
     "post-install-cmd": [
       "BIT\\TYPO3\\Install\\Composer\\Scripts\\Recursive::install",
       "@buildAssets"
@@ -54,12 +57,10 @@
     },
     "bit/assets": {
       "folders": [
-
       ]
     },
     "bit/composer-recursive": {
       "root-folder": [
-
       ]
     }
   }

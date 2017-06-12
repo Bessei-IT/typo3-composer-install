@@ -1,0 +1,30 @@
+# https://intellij-support.jetbrains.com/hc/en-us/articles/206544839-How-to-manage-projects-under-Version-Control-Systems
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/**/*.iml
+.idea/dictionaries/
+
+# Do not store composer files in repository
+/typo3_src/
+/vendor/
+/public/index.php
+/public/typo3
+
+# Do not store temp files in repository
+/public/typo3temp/*
+/public/typo3conf/deprecation_*.log
+/public/typo3conf/ENABLE_INSTALL_TOOL
+
+# Do not store shared files in repository
+/public/fileadmin/*
+/public/uploads/*
+
+# Ignore extensions, can be loaded with composer
+/public/typo3conf/ext/*
+# Store template extension in repository since it's project specific
+!/public/typo3conf/ext/template
+
+# Ignore node specific config
+/config/*.php
+!/config/ConfigDefault.php
+!/config/ConfigDevelopment.php
