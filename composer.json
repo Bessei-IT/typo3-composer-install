@@ -57,12 +57,10 @@
       "web-dir": "public"
     },
     "bit/assets": {
-      "folders": [
-      ]
+      "folders": []
     },
     "bit/composer-recursive": {
-      "root-folder": [
-      ]
+      "root-folder": []
     }
   }
 }
