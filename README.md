@@ -37,6 +37,7 @@ This activates:
 * context_help
 * fluid_styled_content
 * info
+* info_pagetsconfig
 * lowlevel
 * reports
 * rsaauth

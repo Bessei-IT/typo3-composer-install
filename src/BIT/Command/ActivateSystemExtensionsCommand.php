@@ -23,6 +23,7 @@ class ActivateSystemExtensionsCommand extends \Symfony\Component\Console\Command
         'context_help',
         'fluid_styled_content',
         'info',
+        'info_pagetsconfig',
         'lowlevel',
         'reports',
         'rsaauth',
