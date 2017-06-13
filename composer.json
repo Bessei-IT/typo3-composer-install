@@ -30,7 +30,8 @@
     "psr-4": {
       "Helhum\\TYPO3\\Distribution\\": "src/Helhum",
       "BIT\\TYPO3\\Install\\": "src/BIT"
-    }
+    },
+    "files": []
   },
   "scripts": {
     "post-create-project-cmd": [
