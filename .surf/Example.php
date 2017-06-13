@@ -23,6 +23,9 @@
         'Resources/Public/Assets/Src/',
     ];
 
+    // Add additional shared directories. By default fileadmin/ and uploads/ are shared folders
+    $sharedDirectories = [];
+
     // Deployment path, absolute path to project root folder on $node
     $deploymentPath = '/var/www/example/';
 
@@ -53,7 +56,7 @@
     $application->setDeploymentPath($deploymentPath);
     $application->setOption('repositoryUrl', $repositoryUrl);
     $application->setOption('webDirectory', $webDirectory);
-    $application->setOption('directories', []);
+    $application->setOption('directories', $sharedDirectories);
     $application->setOption('rsyncExcludes', $rsyncExcludes);
     if ($enableOpcacheClearTask) {
         $application->setOption('baseUrl', $baseUrl);
