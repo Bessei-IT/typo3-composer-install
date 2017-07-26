@@ -26,7 +26,7 @@ https://docs.typo3.org/typo3cms/extensions/typo3_console/Introduction/
 bin/console typo3:install database-name database-username database-password site-name 
 ```
 
-## Activate often used system extensions
+## Activate common system extensions
 ```bash
 bin/console typo3:activate
 ```
