@@ -6,16 +6,15 @@
 /** @var \TYPO3\Surf\Domain\Model\Deployment $deployment */
 
 (function ($deployment) {
-    /** @var \TYPO3\Surf\Domain\Model\Deployment $deployment */
 
-    $appName = 'ExampleApp';
+    require_once __DIR__ . '/common.php';
+
+    /** @var \TYPO3\Surf\Domain\Model\Deployment $deployment */
     $nodeName = 'ExampleNode';
     // SSH with key auth
     $sshHost = '';
     $sshUsername = '';
 
-    // Local composer path
-    $composerPath = '/usr/local/bin/composer';
 
     // Exclude some files from deployment
     $rsyncExcludes = [
@@ -39,8 +38,18 @@
     // Config for WebOpcacheResetExecuteTask
     // $baseUrl is only needed if you set $enableOpcacheClearTask to true
     $enableOpcacheClearTask = false;
-    // Absolute url to TYPO3 frontend
+    // Absolute TYPO3 (frontend!) url
     $baseUrl = 'http://www.example.com/example-folder/';
+
+    /**********************************************/
+    /* Optional settings                          */
+    /**********************************************/
+    // Local composer path, only needed if composer is not in PATH
+    $composerPath = null;
+
+    // TYPO3 application context: https://usetypo3.com/application-context.html
+    // TYPO3 Surf sets the context for CLI tasks during deployment. Default is Production.
+    $applicationContext = null;
 
     /**********************************************/
     /* That's all, stop editing! Happy deploying. */
@@ -50,11 +59,14 @@
     $node = new \TYPO3\Surf\Domain\Model\Node($nodeName);
     $node->setHostname($sshHost);
     $node->setOption('username', $sshUsername);
-    $node->setOption('composerCommandPath', $composerPath);
+    $node->setOption('composerCommandPath', $composerPath ?? 'composer');
 
     // Configure application
-    $application = new \BIT\Typo3SurfExtended\Application\Typo3CmsApplication($appName);
+    $application = new \BIT\Typo3SurfExtended\Application\Typo3CmsApplication($appName ?? 'TYPO3');
     $application->setDeploymentPath($deploymentPath);
+    if (!empty($applicationContext)) {
+        $application->setContext($applicationContext);
+    }
     $application->setOption('repositoryUrl', $repositoryUrl);
     $application->setOption('webDirectory', $webDirectory);
     $application->setOption('directories', $sharedDirectories);
