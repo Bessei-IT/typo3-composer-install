@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8bb7a0b9223b23e0c76361d5c33e046d",
+    "content-hash": "7f94f5210dd9e4fd126d0064858e4897",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -58,81 +58,22 @@
             "time": "2014-05-19T10:25:02+00:00"
         },
         {
-            "name": "composer/ca-bundle",
-            "version": "1.0.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/ca-bundle.git",
-                "reference": "b17e6153cb7f33c7e44eb59578dc12eee5dc8e12"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/b17e6153cb7f33c7e44eb59578dc12eee5dc8e12",
-                "reference": "b17e6153cb7f33c7e44eb59578dc12eee5dc8e12",
-                "shasum": ""
-            },
-            "require": {
-                "ext-openssl": "*",
-                "ext-pcre": "*",
-                "php": "^5.3.2 || ^7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.5",
-                "psr/log": "^1.0",
-                "symfony/process": "^2.5 || ^3.0"
-            },
-            "suggest": {
-                "symfony/process": "This is necessary to reliably check whether openssl_x509_parse is vulnerable on older php versions, but can be ignored on PHP 5.5.6+"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Composer\\CaBundle\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jordi Boggiano",
-                    "email": "j.boggiano@seld.be",
-                    "homepage": "http://seld.be"
-                }
-            ],
-            "description": "Lets you find a path to the system CA bundle, and includes a fallback to the Mozilla CA bundle.",
-            "keywords": [
-                "cabundle",
-                "cacert",
-                "certificate",
-                "ssl",
-                "tls"
-            ],
-            "time": "2017-03-06T11:59:08+00:00"
-        },
-        {
             "name": "doctrine/annotations",
-            "version": "v1.4.0",
+            "version": "v1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "54cacc9b81758b14e3ce750f205a393d52339e97"
+                "reference": "5beebb01b025c94e93686b7a0ed3edae81fe3e7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/54cacc9b81758b14e3ce750f205a393d52339e97",
-                "reference": "54cacc9b81758b14e3ce750f205a393d52339e97",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/5beebb01b025c94e93686b7a0ed3edae81fe3e7f",
+                "reference": "5beebb01b025c94e93686b7a0ed3edae81fe3e7f",
                 "shasum": ""
             },
             "require": {
                 "doctrine/lexer": "1.*",
-                "php": "^5.6 || ^7.0"
+                "php": "^7.1"
             },
             "require-dev": {
                 "doctrine/cache": "1.*",
@@ -141,7 +82,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4.x-dev"
+                    "dev-master": "1.5.x-dev"
                 }
             },
             "autoload": {
@@ -182,37 +123,41 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2017-02-24T16:22:25+00:00"
+            "time": "2017-07-22T10:58:02+00:00"
         },
         {
             "name": "doctrine/cache",
-            "version": "v1.6.1",
+            "version": "v1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "b6f544a20f4807e81f7044d31e679ccbb1866dc3"
+                "reference": "53d9518ffeb019c51d542ff60cb578f076d3ff16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/b6f544a20f4807e81f7044d31e679ccbb1866dc3",
-                "reference": "b6f544a20f4807e81f7044d31e679ccbb1866dc3",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/53d9518ffeb019c51d542ff60cb578f076d3ff16",
+                "reference": "53d9518ffeb019c51d542ff60cb578f076d3ff16",
                 "shasum": ""
             },
             "require": {
-                "php": "~5.5|~7.0"
+                "php": "~7.1"
             },
             "conflict": {
                 "doctrine/common": ">2.2,<2.4"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.8|~5.0",
-                "predis/predis": "~1.0",
-                "satooshi/php-coveralls": "~0.6"
+                "alcaeus/mongo-php-adapter": "^1.1",
+                "mongodb/mongodb": "^1.1",
+                "phpunit/phpunit": "^5.7",
+                "predis/predis": "~1.0"
+            },
+            "suggest": {
+                "alcaeus/mongo-php-adapter": "Required to use legacy MongoDB driver"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.6.x-dev"
+                    "dev-master": "1.7.x-dev"
                 }
             },
             "autoload": {
@@ -252,24 +197,24 @@
                 "cache",
                 "caching"
             ],
-            "time": "2016-10-29T11:16:17+00:00"
+            "time": "2017-07-22T13:00:15+00:00"
         },
         {
             "name": "doctrine/collections",
-            "version": "v1.4.0",
+            "version": "v1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "1a4fb7e902202c33cce8c55989b945612943c2ba"
+                "reference": "a01ee38fcd999f34d9bfbcee59dbda5105449cbf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/1a4fb7e902202c33cce8c55989b945612943c2ba",
-                "reference": "1a4fb7e902202c33cce8c55989b945612943c2ba",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/a01ee38fcd999f34d9bfbcee59dbda5105449cbf",
+                "reference": "a01ee38fcd999f34d9bfbcee59dbda5105449cbf",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.6 || ^7.0"
+                "php": "^7.1"
             },
             "require-dev": {
                 "doctrine/coding-standard": "~0.1@dev",
@@ -319,20 +264,20 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2017-01-03T10:49:41+00:00"
+            "time": "2017-07-22T10:37:32+00:00"
         },
         {
             "name": "doctrine/common",
-            "version": "v2.7.2",
+            "version": "v2.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "930297026c8009a567ac051fd545bf6124150347"
+                "reference": "4acb8f89626baafede6ee5475bc5844096eba8a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/930297026c8009a567ac051fd545bf6124150347",
-                "reference": "930297026c8009a567ac051fd545bf6124150347",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/4acb8f89626baafede6ee5475bc5844096eba8a9",
+                "reference": "4acb8f89626baafede6ee5475bc5844096eba8a9",
                 "shasum": ""
             },
             "require": {
@@ -392,20 +337,20 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2017-01-13T14:02:13+00:00"
+            "time": "2017-07-22T08:35:12+00:00"
         },
         {
             "name": "doctrine/dbal",
-            "version": "v2.5.12",
+            "version": "v2.5.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "7b9e911f9d8b30d43b96853dab26898c710d8f44"
+                "reference": "729340d8d1eec8f01bff708e12e449a3415af873"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/7b9e911f9d8b30d43b96853dab26898c710d8f44",
-                "reference": "7b9e911f9d8b30d43b96853dab26898c710d8f44",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/729340d8d1eec8f01bff708e12e449a3415af873",
+                "reference": "729340d8d1eec8f01bff708e12e449a3415af873",
                 "shasum": ""
             },
             "require": {
@@ -463,37 +408,37 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2017-02-08T12:53:47+00:00"
+            "time": "2017-07-22T20:44:48+00:00"
         },
         {
             "name": "doctrine/inflector",
-            "version": "v1.1.0",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/inflector.git",
-                "reference": "90b2128806bfde671b6952ab8bea493942c1fdae"
+                "reference": "e11d84c6e018beedd929cff5220969a3c6d1d462"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/90b2128806bfde671b6952ab8bea493942c1fdae",
-                "reference": "90b2128806bfde671b6952ab8bea493942c1fdae",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/e11d84c6e018beedd929cff5220969a3c6d1d462",
+                "reference": "e11d84c6e018beedd929cff5220969a3c6d1d462",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2"
+                "php": "^7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.*"
+                "phpunit/phpunit": "^6.2"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1.x-dev"
+                    "dev-master": "1.2.x-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common\\Inflector\\": "lib/"
+                "psr-4": {
+                    "Doctrine\\Common\\Inflector\\": "lib/Doctrine/Common/Inflector"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -530,7 +475,7 @@
                 "singularize",
                 "string"
             ],
-            "time": "2015-11-06T14:35:42+00:00"
+            "time": "2017-07-22T12:18:28+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -642,16 +587,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "6.2.3",
+            "version": "6.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "8d6c6cc55186db87b7dc5009827429ba4e9dc006"
+                "reference": "f4db5a78a5ea468d4831de7f0bf9d9415e348699"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/8d6c6cc55186db87b7dc5009827429ba4e9dc006",
-                "reference": "8d6c6cc55186db87b7dc5009827429ba4e9dc006",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/f4db5a78a5ea468d4831de7f0bf9d9415e348699",
+                "reference": "f4db5a78a5ea468d4831de7f0bf9d9415e348699",
                 "shasum": ""
             },
             "require": {
@@ -661,8 +606,11 @@
             },
             "require-dev": {
                 "ext-curl": "*",
-                "phpunit/phpunit": "^4.0",
+                "phpunit/phpunit": "^4.0 || ^5.0",
                 "psr/log": "^1.0"
+            },
+            "suggest": {
+                "psr/log": "Required for using the Log middleware"
             },
             "type": "library",
             "extra": {
@@ -700,7 +648,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2017-02-28T22:50:30+00:00"
+            "time": "2017-06-22T18:50:49+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -820,16 +768,16 @@
         },
         {
             "name": "helhum/typo3-console",
-            "version": "4.6.1",
+            "version": "4.6.6",
             "source": {
                 "type": "git",
-                "url": "https://github.com/TYPO3-Console/typo3_console.git",
-                "reference": "1fd31f997f4bdc8f82a633bf75a8ea7713b41987"
+                "url": "https://github.com/TYPO3-Console/TYPO3-Console.git",
+                "reference": "d32f37d39114eddec08ba25d13846fa74fb5b36f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-Console/typo3_console/zipball/1fd31f997f4bdc8f82a633bf75a8ea7713b41987",
-                "reference": "1fd31f997f4bdc8f82a633bf75a8ea7713b41987",
+                "url": "https://api.github.com/repos/TYPO3-Console/TYPO3-Console/zipball/d32f37d39114eddec08ba25d13846fa74fb5b36f",
+                "reference": "d32f37d39114eddec08ba25d13846fa74fb5b36f",
                 "shasum": ""
             },
             "require": {
@@ -903,20 +851,20 @@
                 "console",
                 "typo3"
             ],
-            "time": "2017-05-26T13:40:33+00:00"
+            "time": "2017-07-21T11:09:01+00:00"
         },
         {
             "name": "helhum/typo3-console-plugin",
-            "version": "1.7.2",
+            "version": "1.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3-Console/typo3-console-plugin.git",
-                "reference": "b801c4c69c4efd8c5a22ba808f31337b927c28d5"
+                "reference": "627ec3e80da94e34a962ee146b5f5caa940c6f0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-Console/typo3-console-plugin/zipball/b801c4c69c4efd8c5a22ba808f31337b927c28d5",
-                "reference": "b801c4c69c4efd8c5a22ba808f31337b927c28d5",
+                "url": "https://api.github.com/repos/TYPO3-Console/typo3-console-plugin/zipball/627ec3e80da94e34a962ee146b5f5caa940c6f0c",
+                "reference": "627ec3e80da94e34a962ee146b5f5caa940c6f0c",
                 "shasum": ""
             },
             "require": {
@@ -958,7 +906,7 @@
                 "plugin",
                 "typo3 console"
             ],
-            "time": "2017-05-13T07:42:28+00:00"
+            "time": "2017-06-15T08:14:00+00:00"
         },
         {
             "name": "ircmaxell/random-lib",
@@ -1062,84 +1010,6 @@
             "time": "2015-03-20T14:31:23+00:00"
         },
         {
-            "name": "monolog/monolog",
-            "version": "1.22.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "1e044bc4b34e91743943479f1be7a1d5eb93add0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/1e044bc4b34e91743943479f1be7a1d5eb93add0",
-                "reference": "1e044bc4b34e91743943479f1be7a1d5eb93add0",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0",
-                "psr/log": "~1.0"
-            },
-            "provide": {
-                "psr/log-implementation": "1.0.0"
-            },
-            "require-dev": {
-                "aws/aws-sdk-php": "^2.4.9 || ^3.0",
-                "doctrine/couchdb": "~1.0@dev",
-                "graylog2/gelf-php": "~1.0",
-                "jakub-onderka/php-parallel-lint": "0.9",
-                "php-amqplib/php-amqplib": "~2.4",
-                "php-console/php-console": "^3.1.3",
-                "phpunit/phpunit": "~4.5",
-                "phpunit/phpunit-mock-objects": "2.3.0",
-                "ruflin/elastica": ">=0.90 <3.0",
-                "sentry/sentry": "^0.13",
-                "swiftmailer/swiftmailer": "~5.3"
-            },
-            "suggest": {
-                "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
-                "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
-                "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
-                "ext-mongo": "Allow sending log messages to a MongoDB server",
-                "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
-                "mongodb/mongodb": "Allow sending log messages to a MongoDB server via PHP Driver",
-                "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
-                "php-console/php-console": "Allow sending log messages to Google Chrome",
-                "rollbar/rollbar": "Allow sending log messages to Rollbar",
-                "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
-                "sentry/sentry": "Allow sending log messages to a Sentry server"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Monolog\\": "src/Monolog"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jordi Boggiano",
-                    "email": "j.boggiano@seld.be",
-                    "homepage": "http://seld.be"
-                }
-            ],
-            "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
-            "homepage": "http://github.com/Seldaek/monolog",
-            "keywords": [
-                "log",
-                "logging",
-                "psr-3"
-            ],
-            "time": "2017-03-13T07:08:03+00:00"
-        },
-        {
             "name": "mso/idna-convert",
             "version": "v1.1.0",
             "source": {
@@ -1187,162 +1057,6 @@
                 "php"
             ],
             "time": "2016-06-19T18:08:43+00:00"
-        },
-        {
-            "name": "neos/utility-files",
-            "version": "3.3.13",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/neos/utility-files.git",
-                "reference": "4be0e4cd5ec3a3d1a338df512d6d5b83f8da69ed"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/neos/utility-files/zipball/4be0e4cd5ec3a3d1a338df512d6d5b83f8da69ed",
-                "reference": "4be0e4cd5ec3a3d1a338df512d6d5b83f8da69ed",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.0"
-            },
-            "require-dev": {
-                "mikey179/vfsstream": "~1.6",
-                "phpunit/phpunit": "~4.8 || ~5.2.0"
-            },
-            "type": "library",
-            "extra": {
-                "neos": {
-                    "package-key": "Neos.Utility.Files"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "TYPO3\\Flow\\Utility": "Classes"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Flow Files Utilities",
-            "homepage": "http://flow.typo3.org",
-            "time": "2016-11-17T15:47:06+00:00"
-        },
-        {
-            "name": "padraic/humbug_get_contents",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/humbug/file_get_contents.git",
-                "reference": "279ff67be5b3bd0229326a917c3e262c644b98d6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/humbug/file_get_contents/zipball/279ff67be5b3bd0229326a917c3e262c644b98d6",
-                "reference": "279ff67be5b3bd0229326a917c3e262c644b98d6",
-                "shasum": ""
-            },
-            "require": {
-                "composer/ca-bundle": "^1.0",
-                "ext-openssl": "*",
-                "php": "^5.3 || ^7.0"
-            },
-            "require-dev": {
-                "bamarni/composer-bin-plugin": "^1.1",
-                "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0"
-            },
-            "type": "library",
-            "extra": {
-                "bamarni-bin": {
-                    "bin-links": false
-                },
-                "branch-alias": {
-                    "dev-master": "2.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Humbug\\": "src/"
-                },
-                "files": [
-                    "src/function.php",
-                    "src/functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Pádraic Brady",
-                    "email": "padraic.brady@gmail.com",
-                    "homepage": "http://blog.astrumfutura.com"
-                }
-            ],
-            "description": "Secure wrapper for accessing HTTPS resources with file_get_contents for PHP 5.3+",
-            "homepage": "https://github.com/padraic/file_get_contents",
-            "keywords": [
-                "download",
-                "file_get_contents",
-                "http",
-                "https",
-                "ssl",
-                "tls"
-            ],
-            "time": "2017-06-02T10:18:25+00:00"
-        },
-        {
-            "name": "padraic/phar-updater",
-            "version": "1.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/humbug/phar-updater.git",
-                "reference": "c17eeb3887dc4269d1b4837dc875d39e9f8149a8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/humbug/phar-updater/zipball/c17eeb3887dc4269d1b4837dc875d39e9f8149a8",
-                "reference": "c17eeb3887dc4269d1b4837dc875d39e9f8149a8",
-                "shasum": ""
-            },
-            "require": {
-                "padraic/humbug_get_contents": "^1.0",
-                "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Humbug\\SelfUpdate\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Padraic Brady",
-                    "email": "padraic.brady@gmail.com",
-                    "homepage": "http://blog.astrumfutura.com"
-                }
-            ],
-            "description": "A thing to make PHAR self-updating easy and secure.",
-            "keywords": [
-                "humbug",
-                "phar",
-                "self-update",
-                "update"
-            ],
-            "time": "2016-01-05T23:08:01+00:00"
         },
         {
             "name": "psr/http-message",
@@ -1497,16 +1211,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v3.3.2",
+            "version": "v3.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "70d2a29b2911cbdc91a7e268046c395278238b2e"
+                "reference": "a97e45d98c59510f085fa05225a1acb74dfe0546"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/70d2a29b2911cbdc91a7e268046c395278238b2e",
-                "reference": "70d2a29b2911cbdc91a7e268046c395278238b2e",
+                "url": "https://api.github.com/repos/symfony/console/zipball/a97e45d98c59510f085fa05225a1acb74dfe0546",
+                "reference": "a97e45d98c59510f085fa05225a1acb74dfe0546",
                 "shasum": ""
             },
             "require": {
@@ -1562,20 +1276,20 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-02T19:24:58+00:00"
+            "time": "2017-07-03T13:19:36+00:00"
         },
         {
             "name": "symfony/debug",
-            "version": "v3.3.2",
+            "version": "v3.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "e9c50482841ef696e8fa1470d950a79c8921f45d"
+                "reference": "63b85a968486d95ff9542228dc2e4247f16f9743"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/e9c50482841ef696e8fa1470d950a79c8921f45d",
-                "reference": "e9c50482841ef696e8fa1470d950a79c8921f45d",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/63b85a968486d95ff9542228dc2e4247f16f9743",
+                "reference": "63b85a968486d95ff9542228dc2e4247f16f9743",
                 "shasum": ""
             },
             "require": {
@@ -1618,11 +1332,11 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-01T21:01:25+00:00"
+            "time": "2017-07-05T13:02:37+00:00"
         },
         {
             "name": "symfony/finder",
-            "version": "v3.3.2",
+            "version": "v3.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
@@ -1730,16 +1444,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v3.3.2",
+            "version": "v3.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "8e30690c67aafb6c7992d6d8eb0d707807dd3eaf"
+                "reference": "07432804942b9f6dd7b7377faf9920af5f95d70a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/8e30690c67aafb6c7992d6d8eb0d707807dd3eaf",
-                "reference": "8e30690c67aafb6c7992d6d8eb0d707807dd3eaf",
+                "url": "https://api.github.com/repos/symfony/process/zipball/07432804942b9f6dd7b7377faf9920af5f95d70a",
+                "reference": "07432804942b9f6dd7b7377faf9920af5f95d70a",
                 "shasum": ""
             },
             "require": {
@@ -1775,20 +1489,20 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2017-05-22T12:32:03+00:00"
+            "time": "2017-07-13T13:05:09+00:00"
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.3.2",
+            "version": "v3.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "9752a30000a8ca9f4b34b5227d15d0101b96b063"
+                "reference": "1f93a8d19b8241617f5074a123e282575b821df8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/9752a30000a8ca9f4b34b5227d15d0101b96b063",
-                "reference": "9752a30000a8ca9f4b34b5227d15d0101b96b063",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/1f93a8d19b8241617f5074a123e282575b821df8",
+                "reference": "1f93a8d19b8241617f5074a123e282575b821df8",
                 "shasum": ""
             },
             "require": {
@@ -1830,7 +1544,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-02T22:05:06+00:00"
+            "time": "2017-06-15T12:58:50+00:00"
         },
         {
             "name": "typo3/class-alias-loader",
@@ -1892,16 +1606,16 @@
         },
         {
             "name": "typo3/cms",
-            "version": "8.7.1",
+            "version": "v8.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3/TYPO3.CMS.git",
-                "reference": "5e3a0e4f2124311f9676155580d0794cb1051a2c"
+                "reference": "c7c31332ac2222d03f29be627de34bb58bde0954"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3/TYPO3.CMS/zipball/5e3a0e4f2124311f9676155580d0794cb1051a2c",
-                "reference": "5e3a0e4f2124311f9676155580d0794cb1051a2c",
+                "url": "https://api.github.com/repos/TYPO3/TYPO3.CMS/zipball/c7c31332ac2222d03f29be627de34bb58bde0954",
+                "reference": "c7c31332ac2222d03f29be627de34bb58bde0954",
                 "shasum": ""
             },
             "require": {
@@ -1927,6 +1641,7 @@
                 "typo3fluid/fluid": "^2.3"
             },
             "replace": {
+                "typo3-ter/func": "*",
                 "typo3/cms-about": "self.version",
                 "typo3/cms-backend": "self.version",
                 "typo3/cms-belog": "self.version",
@@ -1978,12 +1693,13 @@
                 "typo3/cms-workspaces": "self.version"
             },
             "require-dev": {
-                "codeception/codeception": "^2.2",
-                "fiunchinho/phpunit-randomizer": "~2.0.3",
+                "codeception/codeception": "^2.3",
+                "enm1989/chromedriver": "~2.30",
+                "fiunchinho/phpunit-randomizer": "~3.0.0",
                 "friendsofphp/php-cs-fixer": "^2.0",
-                "se/selenium-server-standalone": "~2.53",
+                "se/selenium-server-standalone": "~3.4.0",
                 "typo3/cms-styleguide": "~8.0.8",
-                "typo3/testing-framework": "~1.0.0"
+                "typo3/testing-framework": "~1.1.0"
             },
             "suggest": {
                 "ext-fileinfo": "Used for proper file type detection in the file abstraction layer",
@@ -2093,7 +1809,7 @@
                 "extbase",
                 "typo3"
             ],
-            "time": "2017-04-18T17:01:55+00:00"
+            "time": "2017-07-25T16:08:01+00:00"
         },
         {
             "name": "typo3/cms-composer-installers",
@@ -2164,54 +1880,6 @@
             "time": "2016-07-05T09:38:42+00:00"
         },
         {
-            "name": "typo3/surf",
-            "version": "2.0.0-beta7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/TYPO3/Surf.git",
-                "reference": "17488fc177dc887f1511b5a7cb24e9a8f34fa55e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3/Surf/zipball/17488fc177dc887f1511b5a7cb24e9a8f34fa55e",
-                "reference": "17488fc177dc887f1511b5a7cb24e9a8f34fa55e",
-                "shasum": ""
-            },
-            "require": {
-                "ircmaxell/random-lib": "^1.1",
-                "monolog/monolog": "^1.17",
-                "neos/utility-files": "^3.0",
-                "padraic/phar-updater": "^1.0",
-                "psr/log": "^1.0",
-                "symfony/console": "^2.8|^3.0",
-                "symfony/process": "^2.8|^3.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8",
-                "symfony/finder": "^2.8|^3.0"
-            },
-            "bin": [
-                "surf"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "TYPO3\\Surf\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0+"
-            ],
-            "description": "TYPO3 Surf is a deployment tool, suited for a wide variety of applications",
-            "time": "2016-12-12T14:09:33+00:00"
-        },
-        {
             "name": "typo3fluid/fluid",
             "version": "2.3.4",
             "source": {
@@ -2252,6 +1920,50 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "bessei-it/typo3-surf-extended",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Bessei-IT/typo3-surf-extended.git",
+                "reference": "d7563851b77e108aac2c18f2459f1ee41d8c02b4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Bessei-IT/typo3-surf-extended/zipball/d7563851b77e108aac2c18f2459f1ee41d8c02b4",
+                "reference": "d7563851b77e108aac2c18f2459f1ee41d8c02b4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "phpunit/dbunit": "^2.0",
+                "phpunit/phpunit": "^5.6",
+                "typo3/surf": "^2.0.0@dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BIT\\Typo3SurfExtended\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Christoph Bessei",
+                    "email": "chris-typo3_surf_extended@bessei-it.eu"
+                }
+            ],
+            "description": "Additional applications and tasks for TYPO3 Surf ",
+            "support": {
+                "source": "https://github.com/Bessei-IT/typo3-surf-extended/tree/master",
+                "issues": "https://github.com/Bessei-IT/typo3-surf-extended/issues"
+            },
+            "time": "2017-07-26T15:19:33+00:00"
+        },
         {
             "name": "mikey179/vfsStream",
             "version": "v1.6.4",
@@ -2299,6 +2011,84 @@
             "time": "2016-07-18T14:02:57+00:00"
         },
         {
+            "name": "monolog/monolog",
+            "version": "1.23.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Seldaek/monolog.git",
+                "reference": "fd8c787753b3a2ad11bc60c063cff1358a32a3b4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/fd8c787753b3a2ad11bc60c063cff1358a32a3b4",
+                "reference": "fd8c787753b3a2ad11bc60c063cff1358a32a3b4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "psr/log": "~1.0"
+            },
+            "provide": {
+                "psr/log-implementation": "1.0.0"
+            },
+            "require-dev": {
+                "aws/aws-sdk-php": "^2.4.9 || ^3.0",
+                "doctrine/couchdb": "~1.0@dev",
+                "graylog2/gelf-php": "~1.0",
+                "jakub-onderka/php-parallel-lint": "0.9",
+                "php-amqplib/php-amqplib": "~2.4",
+                "php-console/php-console": "^3.1.3",
+                "phpunit/phpunit": "~4.5",
+                "phpunit/phpunit-mock-objects": "2.3.0",
+                "ruflin/elastica": ">=0.90 <3.0",
+                "sentry/sentry": "^0.13",
+                "swiftmailer/swiftmailer": "^5.3|^6.0"
+            },
+            "suggest": {
+                "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
+                "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
+                "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
+                "ext-mongo": "Allow sending log messages to a MongoDB server",
+                "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
+                "mongodb/mongodb": "Allow sending log messages to a MongoDB server via PHP Driver",
+                "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
+                "php-console/php-console": "Allow sending log messages to Google Chrome",
+                "rollbar/rollbar": "Allow sending log messages to Rollbar",
+                "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
+                "sentry/sentry": "Allow sending log messages to a Sentry server"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Monolog\\": "src/Monolog"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                }
+            ],
+            "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
+            "homepage": "http://github.com/Seldaek/monolog",
+            "keywords": [
+                "log",
+                "logging",
+                "psr-3"
+            ],
+            "time": "2017-06-19T01:22:40+00:00"
+        },
+        {
             "name": "myclabs/deep-copy",
             "version": "1.6.1",
             "source": {
@@ -2339,6 +2129,155 @@
                 "object graph"
             ],
             "time": "2017-04-12T18:52:22+00:00"
+        },
+        {
+            "name": "neos/utility-files",
+            "version": "3.3.15",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/neos/utility-files.git",
+                "reference": "ab494d51ec2e1f04cd03f7886c4e891dd5076a3e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/neos/utility-files/zipball/ab494d51ec2e1f04cd03f7886c4e891dd5076a3e",
+                "reference": "ab494d51ec2e1f04cd03f7886c4e891dd5076a3e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "~1.6",
+                "phpunit/phpunit": "~4.8 || ~5.2.0"
+            },
+            "type": "library",
+            "extra": {
+                "neos": {
+                    "package-key": "Neos.Utility.Files"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "TYPO3\\Flow\\Utility": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Flow Files Utilities",
+            "homepage": "http://flow.typo3.org",
+            "time": "2017-04-12T12:44:29+00:00"
+        },
+        {
+            "name": "padraic/humbug_get_contents",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humbug/file_get_contents.git",
+                "reference": "66797199019d0cb4529cb8d29c6f0b4c5085b53a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/humbug/file_get_contents/zipball/66797199019d0cb4529cb8d29c6f0b4c5085b53a",
+                "reference": "66797199019d0cb4529cb8d29c6f0b4c5085b53a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Humbug\\": "src/Humbug/"
+                },
+                "files": [
+                    "src/function.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Pádraic Brady",
+                    "email": "padraic.brady@gmail.com",
+                    "homepage": "http://blog.astrumfutura.com"
+                }
+            ],
+            "description": "Secure wrapper for accessing HTTPS resources with file_get_contents for PHP 5.3+",
+            "homepage": "https://github.com/padraic/file_get_contents",
+            "keywords": [
+                "download",
+                "file_get_contents",
+                "http",
+                "https",
+                "ssl",
+                "tls"
+            ],
+            "time": "2015-04-22T18:45:00+00:00"
+        },
+        {
+            "name": "padraic/phar-updater",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humbug/phar-updater.git",
+                "reference": "ac8802df2d1d03b7092b6f044a914f8d21592aae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/humbug/phar-updater/zipball/ac8802df2d1d03b7092b6f044a914f8d21592aae",
+                "reference": "ac8802df2d1d03b7092b6f044a914f8d21592aae",
+                "shasum": ""
+            },
+            "require": {
+                "padraic/humbug_get_contents": "1.0.4",
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Humbug\\SelfUpdate\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Padraic Brady",
+                    "email": "padraic.brady@gmail.com",
+                    "homepage": "http://blog.astrumfutura.com"
+                }
+            ],
+            "description": "A thing to make PHAR self-updating easy and secure.",
+            "keywords": [
+                "humbug",
+                "phar",
+                "self-update",
+                "update"
+            ],
+            "time": "2017-07-12T22:42:45+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -2396,22 +2335,22 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "3.1.1",
+            "version": "3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "8331b5efe816ae05461b7ca1e721c01b46bafb3e"
+                "reference": "46f7e8bb075036c92695b15a1ddb6971c751e585"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/8331b5efe816ae05461b7ca1e721c01b46bafb3e",
-                "reference": "8331b5efe816ae05461b7ca1e721c01b46bafb3e",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/46f7e8bb075036c92695b15a1ddb6971c751e585",
+                "reference": "46f7e8bb075036c92695b15a1ddb6971c751e585",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5",
                 "phpdocumentor/reflection-common": "^1.0@dev",
-                "phpdocumentor/type-resolver": "^0.2.0",
+                "phpdocumentor/type-resolver": "^0.4.0",
                 "webmozart/assert": "^1.0"
             },
             "require-dev": {
@@ -2437,24 +2376,24 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2016-09-30T07:12:33+00:00"
+            "time": "2017-07-15T11:38:20+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
-            "version": "0.2.1",
+            "version": "0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/TypeResolver.git",
-                "reference": "e224fb2ea2fba6d3ad6fdaef91cd09a172155ccb"
+                "reference": "9c977708995954784726e25d0cd1dddf4e65b0f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/e224fb2ea2fba6d3ad6fdaef91cd09a172155ccb",
-                "reference": "e224fb2ea2fba6d3ad6fdaef91cd09a172155ccb",
+                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/9c977708995954784726e25d0cd1dddf4e65b0f7",
+                "reference": "9c977708995954784726e25d0cd1dddf4e65b0f7",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5",
+                "php": "^5.5 || ^7.0",
                 "phpdocumentor/reflection-common": "^1.0"
             },
             "require-dev": {
@@ -2484,7 +2423,7 @@
                     "email": "me@mikevanriel.com"
                 }
             ],
-            "time": "2016-11-25T06:54:22+00:00"
+            "time": "2017-07-14T14:27:02+00:00"
         },
         {
             "name": "phpspec/prophecy",
@@ -2800,16 +2739,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.7.20",
+            "version": "5.7.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "3cb94a5f8c07a03c8b7527ed7468a2926203f58b"
+                "reference": "3b91adfb64264ddec5a2dee9851f354aa66327db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3cb94a5f8c07a03c8b7527ed7468a2926203f58b",
-                "reference": "3cb94a5f8c07a03c8b7527ed7468a2926203f58b",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3b91adfb64264ddec5a2dee9851f354aa66327db",
+                "reference": "3b91adfb64264ddec5a2dee9851f354aa66327db",
                 "shasum": ""
             },
             "require": {
@@ -2878,20 +2817,20 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-05-22T07:42:55+00:00"
+            "time": "2017-06-21T08:11:54+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "3.4.3",
+            "version": "3.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "3ab72b65b39b491e0c011e2e09bb2206c2aa8e24"
+                "reference": "a23b761686d50a560cc56233b9ecf49597cc9118"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/3ab72b65b39b491e0c011e2e09bb2206c2aa8e24",
-                "reference": "3ab72b65b39b491e0c011e2e09bb2206c2aa8e24",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/a23b761686d50a560cc56233b9ecf49597cc9118",
+                "reference": "a23b761686d50a560cc56233b9ecf49597cc9118",
                 "shasum": ""
             },
             "require": {
@@ -2937,7 +2876,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2016-12-08T20:27:08+00:00"
+            "time": "2017-06-30T09:13:00+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -3453,17 +3392,65 @@
             "time": "2016-10-03T07:35:21+00:00"
         },
         {
-            "name": "typo3/testing-framework",
-            "version": "1.0.7",
+            "name": "typo3/surf",
+            "version": "2.0.0-beta7",
             "source": {
                 "type": "git",
-                "url": "https://github.com/TYPO3/testing-framework.git",
-                "reference": "eafaac680acc34e6288a50d90cecc1d02dfb6e66"
+                "url": "https://github.com/TYPO3/Surf.git",
+                "reference": "17488fc177dc887f1511b5a7cb24e9a8f34fa55e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3/testing-framework/zipball/eafaac680acc34e6288a50d90cecc1d02dfb6e66",
-                "reference": "eafaac680acc34e6288a50d90cecc1d02dfb6e66",
+                "url": "https://api.github.com/repos/TYPO3/Surf/zipball/17488fc177dc887f1511b5a7cb24e9a8f34fa55e",
+                "reference": "17488fc177dc887f1511b5a7cb24e9a8f34fa55e",
+                "shasum": ""
+            },
+            "require": {
+                "ircmaxell/random-lib": "^1.1",
+                "monolog/monolog": "^1.17",
+                "neos/utility-files": "^3.0",
+                "padraic/phar-updater": "^1.0",
+                "psr/log": "^1.0",
+                "symfony/console": "^2.8|^3.0",
+                "symfony/process": "^2.8|^3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8",
+                "symfony/finder": "^2.8|^3.0"
+            },
+            "bin": [
+                "surf"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "TYPO3\\Surf\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "description": "TYPO3 Surf is a deployment tool, suited for a wide variety of applications",
+            "time": "2016-12-12T14:09:33+00:00"
+        },
+        {
+            "name": "typo3/testing-framework",
+            "version": "1.0.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TYPO3/testing-framework.git",
+                "reference": "070dda7e9e0e0a8cd5d02c4ff9ff747eb172c8ee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TYPO3/testing-framework/zipball/070dda7e9e0e0a8cd5d02c4ff9ff747eb172c8ee",
+                "reference": "070dda7e9e0e0a8cd5d02c4ff9ff747eb172c8ee",
                 "shasum": ""
             },
             "require": {
@@ -3513,7 +3500,7 @@
                 "tests",
                 "typo3"
             ],
-            "time": "2017-06-02T12:24:14+00:00"
+            "time": "2017-06-23T10:48:43+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -3569,7 +3556,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "typo3/surf": 10
+        "typo3/surf": 10,
+        "bessei-it/typo3-surf-extended": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

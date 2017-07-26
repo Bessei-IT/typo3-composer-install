@@ -8,7 +8,8 @@
 (function ($deployment) {
     /** @var \TYPO3\Surf\Domain\Model\Deployment $deployment */
 
-    $nodeName = 'Example';
+    $appName = 'ExampleApp';
+    $nodeName = 'ExampleNode';
     // SSH with key auth
     $sshHost = '';
     $sshUsername = '';
@@ -52,50 +53,21 @@
     $node->setOption('composerCommandPath', $composerPath);
 
     // Configure application
-    $application = new \TYPO3\Surf\Application\TYPO3\CMS();
+    $application = new \BIT\Typo3SurfExtended\Application\Typo3CmsApplication($appName);
     $application->setDeploymentPath($deploymentPath);
     $application->setOption('repositoryUrl', $repositoryUrl);
     $application->setOption('webDirectory', $webDirectory);
     $application->setOption('directories', $sharedDirectories);
     $application->setOption('rsyncExcludes', $rsyncExcludes);
-    if ($enableOpcacheClearTask) {
-        $application->setOption('baseUrl', $baseUrl);
-        $application->setOption(
-            'scriptBasePath',
-            \TYPO3\Flow\Utility\Files::concatenatePaths([$deployment->getWorkspacePath($application), $webDirectory])
-        );
-    }
+    $application->setOption('clearOpcache', $enableOpcacheClearTask ?? false);
+    $application->setOption('baseUrl', $baseUrl);
+    $application->setOption(
+        'scriptBasePath',
+        \TYPO3\Flow\Utility\Files::concatenatePaths([$deployment->getWorkspacePath($application), $webDirectory])
+    );
     $application->addNode($node);
 
     $deployment->addApplication($application);
-    $deployment->onInitialize(
-        function () use ($deployment, $application) {
-            /** @var \TYPO3\Surf\Domain\Model\SimpleWorkflow $workflow */
-            $workflow = $deployment->getWorkflow();
-
-            // Add clear opcache task
-            if (!empty($application->getOption('baseUrl')) && !empty($application->getOption('scriptBasePath'))) {
-                $workflow->addTask(
-                    \TYPO3\Surf\Task\Php\WebOpcacheResetCreateScriptTask::class,
-                    'package',
-                    $application
-                );
-                $workflow->addTask(
-                    \TYPO3\Surf\Task\Php\WebOpcacheResetExecuteTask::class,
-                    'switch',
-                    $application
-                );
-            }
-
-            // Add configuration task (Copy config from /config to sharedFolder/Configuration)
-            $workflow->afterTask(
-                \TYPO3\Surf\Task\TYPO3\CMS\SymlinkDataTask::class,
-                [\BIT\TYPO3\Install\Task\RsyncConfigurationTask::class],
-                $application
-            );
-        }
-    );
-
 })(
     $deployment
 );
