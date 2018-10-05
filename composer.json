@@ -59,7 +59,8 @@
       "install-extension-dummy": false
     },
     "typo3/cms": {
-      "web-dir": "public"
+      "web-dir": "public",
+      "cms-package-dir": "{$vendor-dir}/typo3/cms"
     },
     "bit/assets": {
       "folders": []
